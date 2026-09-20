@@ -1,7 +1,6 @@
 # InstaCaption
 
-Turn any image — or your live webcam feed — into a natural-language caption.
-Example: a photo of a cat sleeping on a couch becomes **"a cat is sleeping on a couch"**.
+Upload any image, or choose to use a live webcam version, into a caption!
 
 Built on [BLIP](https://huggingface.co/Salesforce/blip-image-captioning-base), an
 open image-captioning model from Salesforce, run locally via Hugging Face
@@ -10,20 +9,20 @@ the model, ~1GB) it works fully offline.
 
 ## Setup
 
-1. **Python 3.9+** is recommended.
+1. **Python 3.9+** is recommended
 2. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
-   - If you have an NVIDIA GPU and want faster inference, install a CUDA-enabled
+   - If you have an NVIDIA GPU and want faster inference, you can install a CUDA-enabled
      build of PyTorch first by following https://pytorch.org/get-started/locally/,
-     then install the rest of `requirements.txt`.
+     then install the rest of the requirements.
 3. The first time you run either script, it will download the BLIP model
    (a few hundred MB to ~1GB depending on variant). This only happens once.
 
 ## Usage
 
-### GUI app (recommended)
+### GUI app
 
 ```bash
 python instacaption.py
@@ -31,14 +30,12 @@ python instacaption.py
 
 Opens a window with two buttons:
 
-- **🖼 Caption an Image** — opens your file browser immediately; click a
-  picture and it's shown in the window along with its caption.
-- **🎥 Live Webcam** — opens a webcam window with a live-updating caption
+- **Caption your Image** — opens your file browser, click on any image to generate a caption
+- **Live Webcam** — opens a webcam window with a live-updating caption
   overlaid on the video. Press `q` in that window to stop.
 
 Note: while live mode is running, the main InstaCaption window will look
-unresponsive — that's expected (it's how the webcam window's own event loop
-works on most systems) and it goes back to normal as soon as you press `q`.
+unresponsive, it goes back to normal as soon as you press `q`.
 
 ### Or run a single mode from the command line
 
